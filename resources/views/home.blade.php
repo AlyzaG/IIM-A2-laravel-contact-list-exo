@@ -10,7 +10,7 @@
         @if (count($users)>0)
 
             @forelse($users as $user)
-                <p>L'utilisateur {{$user->name}}  à {{$user->contacts}} contact</p>
+                <p>L'utilisateur {{$user->name}}  à {{$user->contacts->count()}} contact</p>
             @empty
                 <p>Il n'y a pas encore d'utilisateur</p>
             @endforelse
