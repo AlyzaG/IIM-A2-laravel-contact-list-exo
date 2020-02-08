@@ -70,7 +70,7 @@
                             <button class="button is-link" type="submit">Modifier le contact</button>
                         </div>
                     </div>
-                    
+
                 </form>
             </div>
         </div>

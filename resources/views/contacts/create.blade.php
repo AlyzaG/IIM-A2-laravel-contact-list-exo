@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <h3>Créer un contact</h3>
                 <form action="{{route('contacts.index')}}" method="post">
-
+                    <!-- TODO mise en place de la form pour créer un contact -->
                     @csrf
                     <div class="form-group">
                         <label for="email">Email</label>
@@ -33,7 +33,6 @@
                         </div>
                         @enderror
                     </div>
-                    <!-- TODO mise en place de la form pour créer un contact -->
                 </form>
             </div>
         </div>

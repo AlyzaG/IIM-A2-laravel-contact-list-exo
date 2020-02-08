@@ -47,9 +47,11 @@ class ContactController extends Controller
     ]);
     return redirect()->route('contacts.index', [$contact]);
      */
-    public function store()
+    public function store(Contact $contact)
     {
-        $contact = $request->name;
+        $contact->contact->add(['user_id' => 1]);
+        Reservation::create($contact->all());
+        return redirect()->route('contacts.index')->with('success', 'Reservation created!');
 
     }
 
@@ -84,12 +86,10 @@ class ContactController extends Controller
      * @param  \App\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $contact, $id)
+    public function update(Request $contact)
     {
-
-
-
-        return redirect('/shows')->with('success', 'Show is successfully updated');
+        $contact->update();
+        return redirect()->route('contacts.index')->with('success', 'Show is successfully updated');
     }
 
     /**
